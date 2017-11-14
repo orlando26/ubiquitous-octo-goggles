@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<c:set var="reg" value="#{SessionContext.register}"></c:set>
+		<h:form>
+			<b:jumbotron>
+				<h1>Register</h1><br></br>
+			
+				
+				<b:inputText id="name" value="#{reg.name}" label="Name: " required="true" required-message="may not be null"></b:inputText>
+				<b:message for="@previous" />
+				
+				<b:inputText value="#{reg.lastName}" label="Last Name: " required="true"></b:inputText>
+				<b:message for="@previous" />
+				
+				<b:inputText value="#{reg.email}" label="Email: " required="true"></b:inputText>
+				<b:message for="@previous" />
+				
+				<b:inputSecret value="#{reg.password}" label="Password: " required="true"></b:inputSecret>
+				<b:message for="@previous" />
+				
+				<b:inputSecret value="#{reg.confirmPassword}" label="Confirm Password: " required="true"></b:inputSecret>
+				<b:message for="@previous" />
+				
+				<b:messages redisplay="false"/>
+				    
+				<div style="float:right">
+					<b:commandButton value="Aceptar" actionListener="#{reg.register}" style="margin-right:5px" look="success"></b:commandButton>
+					<b:commandButton value="Cancelar" actionListener="#{reg.goBack}" look="danger"></b:commandButton>
+				</div>
+				
+				
+				
+			</b:jumbotron>
+			
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
