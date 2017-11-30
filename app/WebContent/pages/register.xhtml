@@ -10,7 +10,7 @@
 
 <ui:composition template="/WEB-INF/template/template.xhtml">
 	<ui:define name="content">
-		<c:set var="reg" value="#{SessionContext.register}"></c:set>
+		<c:set var="reg" value="#{ViewContext.register}"></c:set>
 		<h:form>
 			<b:jumbotron>
 				<h1>Register</h1><br></br>
@@ -35,7 +35,7 @@
 				    
 				<div style="float:right">
 					<b:commandButton value="Aceptar" actionListener="#{reg.register}" style="margin-right:5px" look="success"></b:commandButton>
-					<b:commandButton value="Cancelar" actionListener="#{reg.goBack}" look="danger"></b:commandButton>
+					<b:commandButton value="Cancelar" actionListener="#{reg.goBack}" look="danger" immediate="true"></b:commandButton>
 				</div>
 				
 				
