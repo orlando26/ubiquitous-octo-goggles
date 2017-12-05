@@ -4,17 +4,19 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name="com.jsftemplate.db.AppUser" table="APP_USER">
+   <class name="com.listapp.db.AppUser" table="APP_USER">
       <meta attribute="class-description">
          This class contains the user detail. 
       </meta>
-      <id name="id" type="int" column="apu_id">
+      <id name="id" type="int" column="Usr_Id">
          <generator class="native"/>
       </id>
-      <property name="name" column="Apu_Name" type="string"/>
-      <property name="lastName" column="Apu_LastName" type="string"/>
-      <property name="email" column="Apu_Email" type="string"/>
-      <property name="password" column="Apu_Password" type="string"/>
-      <property name="confirmed" column="Apu_Confirmed" type="yes_no"/>
+      <property name="name" column="Usr_Name" type="string"/>
+      <property name="lastName" column="Usr_LastName" type="string"/>
+      <property name="username" column="Usr_Username" type="string"/>
+      <property name="password" column="Usr_Password" type="string"/>
+      <many-to-one name="houseId" class="com.listapp.db.AppHouse"
+            column="Usr_Hse_id" unique="true" cascade="all" />
+      <property name="lastModified" column="Usr_Last_Modified" type="date"/>
    </class>
 </hibernate-mapping>

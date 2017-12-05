@@ -14,8 +14,8 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
         <!-- SQL Azure connection settings -->
-		<property name="connection.url">jdbc:mysql://testinstance.covrvaofu1mm.us-east-1.rds.amazonaws.com:3306/testdb</property>
-		<property name="connection.username">jsf_template</property>
+		<property name="connection.url">jdbc:mysql://listappdb.covrvaofu1mm.us-east-1.rds.amazonaws.com:3306/ListDB</property>
+		<property name="connection.username">listDB</property>
 		<property name="connection.password">password</property>
 
         <!-- JDBC connection pool (use C3P0) -->
@@ -38,7 +38,9 @@
 
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
-
-        <mapping resource="com/jsftemplate/hbm/AppUser.hbm.xml" />
+		
+		
+        <mapping resource="com/listapp/hbm/AppUser.hbm.xml" />
+        <mapping resource="com/listapp/hbm/AppHouse.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

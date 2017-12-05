@@ -4,15 +4,19 @@ import java.io.Serializable;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 public class HibernateSession {
 	private static final SessionFactory sessionFactory;
 	private static Session session;
-	
+
 	static{
-			sessionFactory = new Configuration().configure().buildSessionFactory();
+		Configuration configuration = new Configuration().configure();
+		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().
+				applySettings(configuration.getProperties());
+		sessionFactory = configuration.buildSessionFactory();
 	}
-	
+
 	public static void saveObject(Object object){
 		session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -20,7 +24,7 @@ public class HibernateSession {
 		session.getTransaction().commit();
 		session.close();
 	}
-	
+
 	public static <T> Object getObjectByPrimaryKey(Class <T> objectClass, Serializable pk){
 		session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -37,5 +41,5 @@ public class HibernateSession {
 		HibernateSession.session = session;
 	}
 
-	
+
 }

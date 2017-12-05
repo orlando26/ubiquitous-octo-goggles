@@ -1,8 +1,9 @@
 package com.listapp.bean;
 
+import java.util.Date;
+
 import com.listapp.db.AppUser;
 import com.listapp.hibernate.HibernateSession;
-import com.listapp.utils.Email;
 import com.listapp.utils.SHAHash;
 
 public class Register extends Form{
@@ -33,12 +34,14 @@ public class Register extends Form{
 			String hashedpassword = SHAHash.hash(password);
 			user.setName(name);
 			user.setLastName(lastName);
+			user.setUsername(email);
 			user.setPassword(hashedpassword);
+			user.setLastModified(new Date());
 			HibernateSession.saveObject(user);
 			
 			redirect("/index.xhtml");
 		}else{
-			System.out.println("Las contraseÃ±as no coinciden");
+			System.out.println("Las contraseñas no coinciden");
 		}
 	}
 	

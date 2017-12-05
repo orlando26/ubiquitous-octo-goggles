@@ -1,3 +1,3 @@
 findByUserName{
-	select * from APP_USER where Apu_Email = :userName
+	select * from APP_USER where Usr_Username = :userName
 }

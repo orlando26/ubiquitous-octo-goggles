@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="com.listapp.db.AppHouse" table="APP_HOUSE">
+      <meta attribute="class-description">
+         This class contains the House detail. 
+      </meta>
+      <id name="id" type="int" column="Hse_Id">
+         <generator class="native"/>
+      </id>
+      <property name="name" column="Hse_Name" type="string"/>
+      <property name="passcode" column="Hse_Passcode" type="string"/>
+      <property name="owner" column="Hse_Owner_id" type="int"/>
+   </class>
+</hibernate-mapping>
