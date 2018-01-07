@@ -10,7 +10,7 @@ import org.hibernate.Session;
 
 public class SQL {
 	
-	public static String sqlFolder = "/com/jsftemplate/sqlFiles/";
+	public static String sqlFolder = "/com/listapp/sqlFiles/";
 	
 	public static String getQuery(String sqlFile, String queryName){
 		String line = null;

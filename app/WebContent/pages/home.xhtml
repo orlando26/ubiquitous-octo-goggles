@@ -11,7 +11,7 @@
 
 <ui:composition template="/WEB-INF/template/template.xhtml">
 	<ui:define name="content">
-		<c:set var="home" value="#{SessionContext.home}"></c:set>
+		<c:set var="home" value="#{ViewContext.home}"></c:set>
 		<b:jumbotron>
 			<h:form styleClass="form-signin" prependId="false">
 				<h1>Hola #{home.userName}!</h1>

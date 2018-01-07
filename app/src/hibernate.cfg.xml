@@ -14,9 +14,9 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
         <!-- SQL Azure connection settings -->
-		<property name="connection.url">jdbc:mysql://listappdb.covrvaofu1mm.us-east-1.rds.amazonaws.com:3306/ListDB</property>
-		<property name="connection.username">listDB</property>
-		<property name="connection.password">password</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/listDB</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">16119321o</property>
 
         <!-- JDBC connection pool (use C3P0) -->
 		<property name="hibernate.c3p0.min_size">5</property>

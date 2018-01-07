@@ -46,9 +46,9 @@ public class AuthorizationFilter implements Filter{
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			HttpServletRequest reqt = (HttpServletRequest) request;
-			HttpServletResponse resp = (HttpServletResponse) response;
-			resp.sendRedirect(reqt.getContextPath() + "/404.xhtml");
+//			HttpServletRequest reqt = (HttpServletRequest) request;
+//			HttpServletResponse resp = (HttpServletResponse) response;
+//			resp.sendRedirect(reqt.getContextPath() + "/404.xhtml");
 		}
 	}
 
